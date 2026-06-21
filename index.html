@@ -4,787 +4,865 @@
   <meta charset="UTF-8">
   <title>Texas Movement Reparations &amp; Partners — Reparative Capital &amp; Infrastructure</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Texas Movement Reparations &amp; Partners — applied economics and reparative capital. Not a claims portal; a research and systems-design arm for reparations as infrastructure and community capital.">
+
+  <!-- Primary description -->
+  <meta name="description" content="Texas Movement Reparations &amp; Partners is a research and systems-design arm that treats reparations as infrastructure and reparative capital — not one-off checks. Applied economics, durable capital, and community-governed systems.">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#15181E">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Texas Movement Reparations &amp; Partners">
+  <meta property="og:title" content="Texas Movement Reparations &amp; Partners — Reparative Capital &amp; Infrastructure">
+  <meta property="og:description" content="Reparations treated as infrastructure and community capital — not one-off checks. Designing and stress-testing capital frameworks that can hold reparations-scale investment over decades.">
+  <meta property="og:url" content="https://reparations.texasmovement.com">
+  <meta property="og:image" content="https://reparations.texasmovement.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="Texas Movement Reparations &amp; Partners — reparative capital &amp; infrastructure.">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Texas Movement Reparations &amp; Partners — Reparative Capital &amp; Infrastructure">
+  <meta name="twitter:description" content="Applied economics and reparative capital for land, housing, institutions, and mobility. A systems-design arm for cities, funds, and Black-led institutions.">
+  <meta name="twitter:image" content="https://reparations.texasmovement.com/og-image.png">
+  <meta name="twitter:image:alt" content="Texas Movement Reparations &amp; Partners — reparative capital &amp; infrastructure.">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --bg-dark: #050608;
-      --bg-concrete: #f5f5f7;
-      --bg-graphite: #111217;
-      --text-main: #f4f4f5;
-      --text-muted: #a0a1aa;
-      --accent-blue: #3b82f6;  /* compression */
-      --accent-red: #f97373;   /* tension/load */
-      --border-subtle: #27272f;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg-dark);
-      color: var(--text-main);
-      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    a:focus-visible {
-      outline: 2px solid var(--accent-blue);
-      outline-offset: 2px;
-    }
-
-    header {
-      padding: 1.5rem 1.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--border-subtle);
-      background: rgba(5, 6, 8, 0.94);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(12px);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-    }
-
-    .brand span {
-      padding: 0.25rem 0.5rem;
-      border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.2), transparent);
-    }
-
-    nav {
-      display: flex;
-      gap: 1.5rem;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--text-muted);
-    }
-
-    nav a:hover {
-      color: var(--text-main);
-    }
-
-    .badge {
-      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent-blue);
-    }
-
-    .hero {
-      padding: 4.5rem 1.75rem 4rem;
-      background: radial-gradient(circle at top left, #181a20, #050608);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .hero-inner {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .hero-kicker {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-      gap: 1rem;
-    }
-
-    .hero-kicker .badge {
-      color: var(--accent-red);
-    }
-
-    .hero-heading {
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      font-size: clamp(2.1rem, 5vw, 3.4rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      margin: 0 0 1rem;
-    }
-
-    .hero-sub {
-      max-width: 640px;
-      font-size: 1rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-
-    .hero-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 0.75rem;
-      margin-bottom: 2rem;
-    }
-
-    .chip {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      color: var(--text-muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.8rem 1.4rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      border: 1px solid transparent;
-      cursor: pointer;
-      background: transparent;
-      color: var(--text-main);
-      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
-    }
-
-    .btn-primary {
-      background: var(--text-main);
-      color: var(--bg-dark);
-      border-color: var(--text-main);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      background: #e5e7eb;
-      border-color: #e5e7eb;
-    }
-
-    .btn-ghost {
-      border-color: var(--border-subtle);
-      color: var(--text-muted);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--accent-blue);
-      color: var(--accent-blue);
-    }
-
-    .hero-figure {
-      margin-top: 2.5rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border-subtle);
-      display: grid;
-      grid-template-columns: minmax(0, 2.5fr) minmax(0, 1.5fr);
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .grid-vis {
-      border-radius: 1rem;
-      padding: 1.25rem;
-      background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.14), rgba(15, 23, 42, 0.9));
-      border: 1px solid rgba(148, 163, 184, 0.4);
-    }
-
-    .grid-vis-inner {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 0.75rem;
-      font-size: 0.7rem;
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      color: var(--text-muted);
-    }
-
-    .grid-node {
-      padding: 0.75rem 0.65rem;
-      border-radius: 0.75rem;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      position: relative;
-      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7));
-    }
-
-    .grid-node--source {
-      border-color: var(--accent-red);
-      box-shadow: 0 0 0 1px rgba(249, 115, 115, 0.4);
-    }
-
-    .grid-node--terminal {
-      border-color: var(--accent-blue);
-      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.4);
-    }
-
-    .grid-node-label {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.65rem;
-      color: var(--text-main);
-      margin-bottom: 0.25rem;
-    }
-
-    .hero-figure-caption {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-    }
-
-    .hero-figure-caption span {
-      color: var(--accent-blue);
-    }
-
-    main section {
-      padding: 4rem 1.75rem 3.5rem;
-      border-bottom: 1px solid var(--border-subtle);
-      background: var(--bg-dark);
-    }
-
-    .section-inner {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .section-kicker {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent-blue);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-title {
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      margin: 0 0 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .section-body {
-      font-size: 0.96rem;
-      color: var(--text-muted);
-      line-height: 1.8;
-      max-width: 720px;
-    }
-
-    .section-body p {
-      margin: 0 0 1rem;
-    }
-
-    .checkpoint-grid {
-      margin-top: 2.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.75rem;
-    }
-
-    .checkpoint {
-      padding: 1.5rem 1.25rem 1.25rem;
-      border-radius: 1rem;
-      background: #0c0d12;
-      border: 1px solid var(--border-subtle);
-    }
-
-    .checkpoint-label {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .checkpoint h3 {
-      margin: 0 0 0.75rem;
-      font-size: 1rem;
-    }
-
-    .checkpoint ul {
-      margin: 0;
-      padding-left: 1.1rem;
-      list-style: disc;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    .usecases {
-      margin-top: 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-
-    .usecase {
-      border-radius: 1rem;
-      padding: 1.5rem 1.25rem 1.5rem;
-      background: #0c0d12;
-      border: 1px solid var(--border-subtle);
-    }
-
-    .usecase-label {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.35rem;
-    }
-
-    .usecase h3 {
-      margin: 0 0 0.25rem;
-      font-size: 0.98rem;
-      color: var(--text-main);
-    }
-
-    .usecase h4 {
-      margin: 0 0 0.85rem;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    .usecase-block-label {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent-blue);
-      margin-top: 0.4rem;
-      margin-bottom: 0.35rem;
-    }
-
-    .usecase p {
-      margin: 0 0 0.75rem;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .work-grid {
-      margin-top: 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-
-    .work-column h3 {
-      margin: 0 0 0.75rem;
-      font-size: 0.98rem;
-    }
-
-    .work-column ul {
-      margin: 0;
-      padding-left: 1.1rem;
-      list-style: disc;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .phase-text {
-      margin-top: 1.75rem;
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    .phase-pill {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      padding: 0.08rem 0.4rem;
-      border-radius: 999px;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.5);
-      color: var(--text-main);
-      transition: color 0.15s ease, border-color 0.15s ease;
-    }
-
-    .phase-pill.phase-dx:hover {
-      border-color: var(--accent-blue);
-      color: var(--accent-blue);
-    }
-
-    .phase-pill.phase-design:hover {
-      border-color: var(--accent-red);
-      color: var(--accent-red);
-    }
-
-    .phase-pill.phase-gov:hover {
-      border-color: var(--accent-blue);
-      color: var(--accent-blue);
-    }
-
-    .work-cta {
-      margin-top: 2.25rem;
-    }
-
-    footer {
-      padding: 2.75rem 1.75rem 2.5rem;
-      background: var(--bg-graphite);
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .footer-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .footer-main {
-      margin-bottom: 1.5rem;
-    }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 1.75rem;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.8rem;
-    }
-
-    .links a {
-      color: var(--text-muted);
-    }
-
-    .links a:hover {
-      color: var(--text-main);
-    }
-
-    .links .right {
-      margin-left: auto;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        padding-inline: 1.2rem;
+    :root{
+      --paper:#E7E8E2;
+      --panel:#DDDED7;
+      --ink:#15181E;
+      --ink-2:#1B1F26;
+      --ink-soft:#454A54;
+      --line:#C4C6BD;
+      --line-strong:#A6A99F;
+      --white:#F4F5F0;
+      --bone-soft:#B9BDC4;
+      --compression:#274A78;
+      --compression-lt:#5C86B8;
+      --tension:#BD3B22;
+      --tension-lt:#E0795F;
+      --wrap:1180px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      background:var(--paper);
+      color:var(--ink);
+      font-family:"IBM Plex Sans",system-ui,sans-serif;
+      font-size:17px;
+      line-height:1.62;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+    .section{padding:96px 0;position:relative}
+
+    .eyebrow{
+      font-family:"IBM Plex Mono",monospace;
+      font-size:.72rem;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:22px;
+    }
+    .eyebrow::before{
+      content:"";
+      width:34px;
+      height:1px;
+      background:var(--tension);
+      flex:none;
+    }
+
+    h1,h2,h3{
+      font-family:"Space Grotesk",sans-serif;
+      font-weight:600;
+      line-height:1.06;
+      letter-spacing:-.01em;
+    }
+    h2{font-size:clamp(1.7rem,3.2vw,2.5rem);margin-bottom:18px}
+    p{color:var(--ink-soft)}
+    p strong{color:var(--ink);font-weight:600}
+
+    /* nav */
+    .topbar{
+      border-bottom:1px solid #2a2f38;
+      position:sticky;
+      top:0;
+      background:rgba(21,24,30,.92);
+      backdrop-filter:blur(8px);
+      z-index:50;
+    }
+    .topbar .wrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      height:60px;
+      gap:20px;
+    }
+    .brand{
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+      text-decoration:none;
+      color:var(--white);
+    }
+    .brand .mark{
+      font-family:"Space Grotesk",sans-serif;
+      font-weight:700;
+      font-size:.95rem;
+      letter-spacing:.01em;
+    }
+    .brand .sub{
+      font-family:"IBM Plex Mono",monospace;
+      font-size:.66rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--tension-lt);
+    }
+    .nav{
+      display:flex;
+      gap:26px;
+    }
+    .nav a{
+      font-family:"IBM Plex Mono",monospace;
+      font-size:.74rem;
+      letter-spacing:.06em;
+      text-decoration:none;
+      color:var(--bone-soft);
+      text-transform:uppercase;
+    }
+    .nav a:hover{color:var(--white)}
+
+    /* hero (dark) */
+    .hero{
+      background:var(--ink);
+      color:var(--paper);
+      padding:90px 0 80px;
+      border-bottom:1px solid #2a2f38;
+      overflow:hidden;
+    }
+    .hero .wrap{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:54px;
+      align-items:center;
+    }
+    .hero .eyebrow{color:var(--bone-soft)}
+    .hero h1{
+      font-size:clamp(2.5rem,5.4vw,4.2rem);
+      font-weight:700;
+      color:var(--white);
+      margin:8px 0 24px;
+    }
+    .hero h1 em{
+      font-style:normal;
+      color:var(--tension-lt);
+    }
+    .hero .lede{
+      font-size:1.12rem;
+      max-width:32em;
+      margin-bottom:28px;
+      color:var(--bone-soft);
+    }
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:34px;
+    }
+    .chip{
+      font-family:"IBM Plex Mono",monospace;
+      font-size:.7rem;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      border:1px solid #343a44;
+      color:var(--bone-soft);
+      padding:8px 14px;
+      border-radius:999px;
+    }
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+    .btn{
+      font-family:"IBM Plex Mono",monospace;
+      font-size:.82rem;
+      letter-spacing:.04em;
+      text-decoration:none;
+      padding:15px 26px;
+      border:1px solid var(--white);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition:.18s ease;
+      background:var(--white);
+      color:var(--ink);
+    }
+    .btn:hover{background:transparent;color:var(--white)}
+    .btn--ghost{background:transparent;color:var(--white)}
+    .btn--ghost:hover{background:var(--white);color:var(--ink)}
+    .btn--dark{background:var(--ink);color:var(--white);border-color:var(--ink)}
+    .btn--dark:hover{background:transparent;color:var(--ink)}
+    .btn .arrow{transition:transform .18s ease}
+    .btn:hover .arrow{transform:translateX(3px)}
+
+    /* hero figure: reparations infrastructure grid */
+    .figure{width:100%;aspect-ratio:1/.94}
+    .fig{width:100%;height:100%;display:block}
+    @keyframes flow{to{stroke-dashoffset:-18}}
+    .fig .cap{
+      stroke-dasharray:3 6;
+      animation:flow 2.4s linear infinite;
+    }
+    .fig-caption{
+      font-family:"IBM Plex Mono",monospace;
+      font-size:.66rem;
+      letter-spacing:.08em;
+      color:var(--bone-soft);
+      text-transform:uppercase;
+      margin-top:8px;
+      text-align:right;
+    }
+
+    /* framing */
+    .section--panel{
+      background:var(--panel);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .lead-col{max-width:46em}
+    .lead-col p{
+      font-size:1.06rem;
+      margin-bottom:18px;
+    }
+
+    /* infrastructure band */
+    .band{
+      margin-top:48px;
+      border:1px solid var(--line-strong);
+      background:var(--paper);
+      padding:34px 26px;
+    }
+    .band .track{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:0;
+      position:relative;
+    }
+    .band .track::before{
+      content:"";
+      position:absolute;
+      left:6%;
+      right:6%;
+      top:18px;
+      height:1px;
+      background:var(--line-strong);
+    }
+    .node{
+      position:relative;
+      z-index:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+      flex:1;
+      text-align:center;
+    }
+    .node .dot{
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      background:var(--paper);
+      border:2px solid var(--compression);
+    }
+    .node:first-child .dot{
+      background:var(--tension);
+      border-color:var(--tension);
+    }
+    .node:last-child .dot{
+      background:var(--ink);
+      border-color:var(--ink);
+    }
+    .node .lab{
+      font-family:"IBM Plex Mono",monospace;
+      font-size:.66rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      line-height:1.4;
+    }
+    .band .key{
+      font-family:"IBM Plex Mono",monospace;
+      font-size:.64rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      margin-top:26px;
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .band .key span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .band .key i{
+      width:18px;
+      height:2px;
+      display:inline-block;
+    }
+
+    /* frameworks */
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:42px;
+    }
+    .col{
+      border:1px solid var(--line-strong);
+      background:var(--paper);
+      padding:32px 28px;
+    }
+    .col .n{
+      font-family:"IBM Plex Mono",monospace;
+      font-size:.66rem;
+      letter-spacing:.12em;
+      color:var(--tension);
+      margin-bottom:14px;
+    }
+    .col h3{
+      font-size:1.18rem;
+      margin-bottom:14px;
+    }
+    .col ul{list-style:none}
+    .col li{
+      padding:12px 0;
+      border-top:1px solid var(--line);
+      font-size:.94rem;
+      color:var(--ink);
+      display:flex;
+      gap:11px;
+    }
+    .col li::before{
+      content:"—";
+      color:var(--compression);
+      font-family:"IBM Plex Mono",monospace;
+      flex:none;
+    }
+
+    /* use-cases */
+    .cases{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      margin-top:42px;
+    }
+    .case{
+      border:1px solid var(--line-strong);
+      background:var(--paper);
+      padding:30px 30px;
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:30px;
+    }
+    .case .lead h3{
+      font-size:1.22rem;
+      margin-bottom:10px;
+    }
+    .case .lead .tag{
+      font-family:"IBM Plex Mono",monospace;
+      font-size:.64rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      margin-bottom:12px;
+      display:block;
+    }
+    .case .lead p{
+      font-size:.96rem;
+    }
+    .case .detail{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      border-left:1px solid var(--line);
+      padding-left:30px;
+    }
+    .case .detail .k{
+      font-family:"IBM Plex Mono",monospace;
+      font-size:.64rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+    .case .detail .k.ch{color:var(--compression)}
+    .case .detail .k.cap{color:var(--tension)}
+    .case .detail p{
+      font-size:.92rem;
+      color:var(--ink);
+    }
+
+    /* work with us (dark) */
+    .work{
+      background:var(--ink);
+      color:var(--paper);
+    }
+    .work .eyebrow{color:var(--bone-soft)}
+    .work h2{color:var(--white)}
+    .work .lead-col p{color:var(--bone-soft)}
+    .work .two{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:0;
+      border:1px solid #2c313b;
+      margin:44px 0 40px;
+    }
+    .work .two .half{
+      padding:34px 32px;
+    }
+    .work .two .half:first-child{
+      border-right:1px solid #2c313b;
+    }
+    .work .two h3{
+      color:var(--white);
+      font-size:1.1rem;
+      margin-bottom:18px;
+    }
+    .work .two li{
+      list-style:none;
+      padding:12px 0;
+      border-top:1px solid #2c313b;
+      font-size:.95rem;
+      color:var(--bone-soft);
+    }
+    .work .disclaim{
+      font-family:"IBM Plex Mono",monospace;
+      font-size:.72rem;
+      letter-spacing:.04em;
+      color:var(--bone-soft);
+      border-left:2px solid var(--tension);
+      padding-left:16px;
+      margin-bottom:30px;
+      max-width:54em;
+      line-height:1.7;
+    }
+
+    /* footer */
+    .foot{
+      background:var(--ink-2);
+      color:var(--bone-soft);
+      padding:64px 0 40px;
+      border-top:1px solid #2c313b;
+    }
+    .foot .tagline{
+      font-family:"Space Grotesk",sans-serif;
+      font-weight:600;
+      font-size:1.15rem;
+      color:var(--white);
+      margin-bottom:14px;
+    }
+    .foot .note{
+      font-size:.92rem;
+      max-width:54em;
+      margin-bottom:34px;
+    }
+    .foot .links{
+      display:flex;
+      gap:26px;
+      flex-wrap:wrap;
+      font-family:"IBM Plex Mono",monospace;
+      font-size:.72rem;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      border-top:1px solid #2c313b;
+      padding-top:24px;
+    }
+    .foot .links a{
+      text-decoration:none;
+      color:var(--bone-soft);
+    }
+    .foot .links a:hover{color:var(--white)}
+    .foot .links .right{
+      margin-left:auto;
+      color:#6f757f;
+    }
+
+    @media(max-width:900px){
+      .nav{display:none}
+      .hero .wrap{grid-template-columns:1fr;gap:34px}
+      .figure{max-width:400px;order:-1}
+      .grid3{grid-template-columns:1fr}
+      .case{grid-template-columns:1fr;gap:22px}
+      .case .detail{
+        border-left:none;
+        border-top:1px solid var(--line);
+        padding-left:0;
+        padding-top:22px;
       }
-      nav {
-        display: none;
+      .work .two{
+        grid-template-columns:1fr;
       }
-      .hero {
-        padding-inline: 1.2rem;
+      .work .two .half:first-child{
+        border-right:none;
+        border-bottom:1px solid #2c313b;
       }
-      main section,
-      footer {
-        padding-inline: 1.2rem;
+      .band .track{
+        flex-direction:column;
+        gap:22px;
+        align-items:flex-start;
       }
-      .hero-figure {
-        grid-template-columns: minmax(0, 1fr);
+      .band .track::before{display:none}
+      .node{
+        flex-direction:row;
+        text-align:left;
       }
-      .links {
-        flex-direction: column;
-        align-items: flex-start;
+      .foot .links .right{
+        margin-left:0;
+        width:100%;
       }
-      .links .right {
-        margin-left: 0;
-        margin-top: 0.5rem;
-      }
+      .section{padding:70px 0}
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
+    @media(prefers-reduced-motion:reduce){
+      .fig .cap{animation:none}
+      html{scroll-behavior:auto}
+    }
+    :focus-visible{
+      outline:2px solid var(--compression-lt);
+      outline-offset:3px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <a class="brand" href="https://texasmovement.com/">
-      <span>Texas Movement</span>
-      REPARATIONS &amp; PARTNERS
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="https://texasmovement.com" class="brand">
+      <span class="mark">Texas Movement</span>
+      <span class="sub">Reparations &amp; Partners</span>
     </a>
-    <nav>
+    <nav class="nav">
       <a href="#thesis">Thesis</a>
       <a href="#frameworks">Frameworks</a>
       <a href="#usecases">Use-cases</a>
       <a href="#work">Work with us</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-kicker">
-          <div class="badge">REP // APPLIED ECONOMICS &amp; REPARATIVE CAPITAL</div>
-        </div>
-        <h1 class="hero-heading">Reparations is a design problem, not a payout.</h1>
-        <p class="hero-sub">
-          A research and systems-design arm that treats reparations as infrastructure and community capital — not one-off checks. We design and stress-test the capital frameworks that can carry reparations-scale investments into land, institutions, and people, so repair holds past the press release.
+<main>
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">REP // Applied Economics &amp; Reparative Capital</div>
+        <h1>Reparations is a <em>design problem</em>, not a payout.</h1>
+        <p class="lede">
+          A research and systems-design arm that treats reparations as infrastructure and community capital — not one-off checks. We design and stress-test the capital frameworks that can carry reparations-scale investment into land, institutions, and people, and hold up under decades of accountability.
         </p>
-        <div class="hero-chips">
-          <span class="chip">REPAIR OVER OPTICS</span>
-          <span class="chip">INFRASTRUCTURE OVER SLOGANS</span>
-          <span class="chip">SYSTEMS OVER STUNTS</span>
+        <div class="chips">
+          <span class="chip">Repair over optics</span>
+          <span class="chip">Infrastructure over slogans</span>
+          <span class="chip">Systems over stunts</span>
         </div>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#thesis">Read the thesis&nbsp;→</a>
-          <a class="btn btn-ghost" href="#work">For institutions &amp; funds</a>
-        </div>
-        <div class="hero-figure">
-          <div class="grid-vis" aria-hidden="true">
-            <div class="grid-vis-inner">
-              <div class="grid-node grid-node--source">
-                <div class="grid-node-label">Capital<br>source</div>
-                <div>Reparations-scale capital under load.</div>
-              </div>
-              <div class="grid-node">
-                <div class="grid-node-label">Land &amp;<br>housing</div>
-                <div>Corridors, lots, and holdings recovered or built.</div>
-              </div>
-              <div class="grid-node">
-                <div class="grid-node-label">Institutions<br>&amp; orgs</div>
-                <div>Schools, clinics, cooperatives capitalized to hold gains.</div>
-              </div>
-              <div class="grid-node">
-                <div class="grid-node-label">Education<br>&amp; mobility</div>
-                <div>Workforce, transit, and access infrastructure.</div>
-              </div>
-              <div class="grid-node grid-node--terminal">
-                <div class="grid-node-label">Durable<br>repair</div>
-                <div>Structural change that survives a cycle.</div>
-              </div>
-            </div>
-          </div>
-          <div class="hero-figure-caption">
-            FIG. 06 — CAPITAL ROUTED INTO DURABLE INFRASTRUCTURE <span>· REP // 01 — THE THESIS</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="thesis">
-      <div class="section-inner">
-        <div class="section-kicker">REP // 01 — THE THESIS</div>
-        <h2 class="section-title">Reparations as infrastructure, not just checks.</h2>
-        <div class="section-body">
-          <p>
-            The gap reparations is meant to close is structural. It shows up as missing wealth, blocked mobility, thin institutions, and absent infrastructure — the compounded result of policy that was explicit about who should hold assets and who should not.
-          </p>
-          <p>
-            If the harm is structural, then so is the repair. Writing checks without changing the system leaves the underlying extraction intact. The capital returns to the same balance sheets that benefited from the harm in the first place.
-          </p>
-          <p>
-            So the lever this vertical works on is the system itself: <strong>land, housing, education, capital access, and mobility</strong> — the durable assets that determine whether a community can accumulate and hold gains over time.
-          </p>
-          <p>
-            That draws a hard line between the symbolic and the material. A statement, a fund announcement, or a logo on a report is signaling. A capitalized institution, a recovered land position, a cooperative that owns its infrastructure — those are structural moves.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="frameworks">
-      <div class="section-inner">
-        <div class="section-kicker">REP // 02 — FRAMEWORKS</div>
-        <h2 class="section-title">From community harms to community repair.</h2>
-        <div class="section-body">
-          <p>
-            Not every project labeled reparative is doing reparative work. We use a simple evaluative discipline — closer to a structural checklist than a mission statement — to separate capital that changes the system from capital that just changes the press release.
-          </p>
-        </div>
-
-        <div class="checkpoint-grid">
-          <div class="checkpoint">
-            <div class="checkpoint-label">CHECKPOINT 01</div>
-            <h3>Acknowledgement &amp; record</h3>
-            <ul>
-              <li>The specific harm is named, not gestured at.</li>
-              <li>It is documented with data and local knowledge.</li>
-              <li>The affected community is identified precisely.</li>
-              <li>The record is public and can be audited.</li>
-            </ul>
-          </div>
-
-          <div class="checkpoint">
-            <div class="checkpoint-label">CHECKPOINT 02</div>
-            <h3>Infrastructure &amp; capital</h3>
-            <ul>
-              <li>Tangible assets are built, recovered, or redirected.</li>
-              <li>Institutions and orgs are capitalized, not just consulted.</li>
-              <li>Ownership and governance sit with the community.</li>
-              <li>The capital structure is durable, not one-cycle.</li>
-            </ul>
-          </div>
-
-          <div class="checkpoint">
-            <div class="checkpoint-label">CHECKPOINT 03</div>
-            <h3>Future-proofing</h3>
-            <ul>
-              <li>The policy or rule that enabled the harm is changed.</li>
-              <li>Tracking and accountability outlive the project team.</li>
-              <li>Gains are protected against extraction or reversal.</li>
-              <li>The same harm cannot be quietly recreated.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="usecases">
-      <div class="section-inner">
-        <div class="section-kicker">REP // 03 — USE-CASES</div>
-        <h2 class="section-title">How this lab thinks about a project.</h2>
-        <div class="section-body">
-          <p>
-            Illustrative, not active engagements — sketches of the reasoning we'd bring to a real diagnosis. Each pairs a structural change with the capital it would actually take to make it hold.
-          </p>
-        </div>
-
-        <div class="usecases">
-          <div class="usecase">
-            <div class="usecase-label">Use-case A · Land &amp; Housing</div>
-            <h3>A historically redlined corridor</h3>
-            <h4>
-              A corridor where decades of redlining suppressed ownership and starved property of investment. The repair isn't a payment to residents — it's restoring a community's ability to own, hold, and benefit from the corridor itself.
-            </h4>
-            <div class="usecase-block-label">What changes</div>
-            <p>
-              Community-controlled land ownership, anti-displacement structures, and reinvestment that accrues to residents rather than incoming capital.
-            </p>
-            <div class="usecase-block-label">What capital is needed</div>
-            <p>
-              Acquisition and a community land trust, patient debt for rehabilitation, and a reserve that absorbs the early years of carry.
-            </p>
-          </div>
-
-          <div class="usecase">
-            <div class="usecase-label">Use-case B · Institutions</div>
-            <h3>Capitalizing Black-led institutions</h3>
-            <h4>
-              Schools, clinics, and cooperatives that already serve a community but operate undercapitalized and debt-burdened. The lever is balance-sheet strength, not another program grant.
-            </h4>
-            <div class="usecase-block-label">What changes</div>
-            <p>
-              Debt relief and durable endowment move institutions from year-to-year survival to long-horizon operation and ownership.
-            </p>
-            <div class="usecase-block-label">What capital is needed</div>
-            <p>
-              Debt retirement, an endowment or recoverable-grant pool, and governance support so capital stays accountable to the community.
-            </p>
-          </div>
-
-          <div class="usecase">
-            <div class="usecase-label">Use-case C · Workforce &amp; Mobility</div>
-            <h3>Infrastructure for high-risk labor markets</h3>
-            <h4>
-              Communities built around low-wage, high-risk work, where the missing infrastructure is the pathway out — training, transit, and access to better-paying, safer sectors.
-            </h4>
-            <div class="usecase-block-label">What changes</div>
-            <p>
-              Durable workforce and mobility infrastructure that raises earning power and reduces exposure to dangerous, dead-end labor.
-            </p>
-            <div class="usecase-block-label">What capital is needed</div>
-            <p>
-              Capital for training institutions, transit and digital-access infrastructure, and wage-bridge financing through the transition.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="work">
-      <div class="section-inner">
-        <div class="section-kicker">REP // 04 — WORK WITH US</div>
-        <h2 class="section-title">For institutions building reparative capital.</h2>
-        <div class="section-body">
-          <p>
-            This vertical is a research and design arm. It does not collect reparations claims, process applications, or disburse payments to individuals. It works with organizations on the design and governance of reparative capital and infrastructure.
-          </p>
-          <p>
-            We work with cities, foundations, mission-driven funds, anchor institutions, and policy organizations that are serious about moving beyond statements — and want the capital and infrastructure to match their language.
-          </p>
-          <p>
-            The work runs in three phases. First, <span class="phase-pill phase-dx">diagnosis</span>: naming the specific harms and structural gaps with data and local knowledge, so the intervention targets the right load. Then <span class="phase-pill phase-design">design</span>: shaping the capital, assets, institutions, and financing structures that carry the repair. Then <span class="phase-pill phase-gov">governance</span>: building the tracking and accountability systems that keep the project honest and on-thesis for as long as the capital is deployed.
-          </p>
-        </div>
-
-        <div class="work-grid">
-          <div class="work-column">
-            <h3>Who this is for</h3>
-            <ul>
-              <li>Cities and public agencies designing local programs.</li>
-              <li>Foundations and mission-driven funds.</li>
-              <li>Anchor institutions — universities, hospitals, HBCUs.</li>
-              <li>Black-led orgs, cooperatives, and CDFIs.</li>
-              <li>Policy and research organizations.</li>
-            </ul>
-          </div>
-          <div class="work-column">
-            <h3>What we do together</h3>
-            <ul>
-              <li>Diagnose harms and structural gaps with the evidence.</li>
-              <li>Design the capital and infrastructure interventions.</li>
-              <li>Structure ownership and community governance.</li>
-              <li>Build tracking so projects stay accountable over time.</li>
-              <li>Pressure-test the thesis before capital is committed.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="work-cta">
-          <a
-            class="btn btn-ghost"
-            href="mailto:reparations@texasmovement.com?subject=Reparative%20Capital%20Project%20%E2%80%94%20%5BInstitution%5D"
-          >
-            Start a reparative capital project
+        <div class="cta-row">
+          <a class="btn" href="#thesis">
+            Read the thesis <span class="arrow">→</span>
+          </a>
+          <a class="btn btn--ghost" href="#work">
+            For institutions &amp; funds <span class="arrow">↓</span>
           </a>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-main">
-        <strong>Texas Movement International — Systems for people who move.</strong>
+      <aside class="figure">
+        <!-- Simple infrastructure grid / capital routing diagram -->
+        <svg class="fig" viewBox="0 0 320 300" role="img" aria-labelledby="rep-fig">
+          <title id="rep-fig">Capital routed into durable infrastructure</title>
+          <rect x="24" y="36" width="272" height="208" rx="18" fill="#1B1F26" stroke="#4b515e" stroke-width="1.4"/>
+          <line class="cap" x1="70" y1="90" x2="250" y2="90" stroke="#5C86B8" stroke-width="2"/>
+          <line class="cap" x1="70" y1="130" x2="250" y2="130" stroke="#E0795F" stroke-width="2"/>
+          <line class="cap" x1="70" y1="170" x2="250" y2="170" stroke="#C4C6BD" stroke-width="2"/>
+
+          <circle cx="70" cy="90" r="8" fill="#BD3B22"/>
+          <circle cx="70" cy="130" r="8" fill="#274A78"/>
+          <circle cx="70" cy="170" r="8" fill="#A6A99F"/>
+
+          <circle cx="250" cy="90" r="8" fill="#15181E" stroke="#BD3B22" stroke-width="2"/>
+          <circle cx="250" cy="130" r="8" fill="#15181E" stroke="#274A78" stroke-width="2"/>
+          <circle cx="250" cy="170" r="8" fill="#15181E" stroke="#A6A99F" stroke-width="2"/>
+
+          <text x="70" y="70" font-family="IBM Plex Mono, monospace" font-size="9" fill="#B9BDC4">Capital source</text>
+          <text x="250" y="70" font-family="IBM Plex Mono, monospace" font-size="9" fill="#B9BDC4" text-anchor="end">Durable infrastructure</text>
+        </svg>
+        <div class="fig-caption">FIG. 06 — CAPITAL ROUTED INTO DURABLE INFRASTRUCTURE</div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--panel" id="thesis">
+    <div class="wrap">
+      <div class="eyebrow">REP // 01 — The Thesis</div>
+      <h2>Reparations as infrastructure, not just checks.</h2>
+
+      <div class="lead-col">
         <p>
-          Texas Movement Reparations &amp; Partners is a research and systems-design arm focused on reparative capital and infrastructure. It is not a claims-processing or benefits-administration body and does not collect individual applications or disburse payments.
+          The gap reparations is meant to close is structural. It shows up as missing wealth, blocked mobility, thin institutions, and absent infrastructure — the compounded result of policy that was designed, written down, and enforced over generations. A one-time transfer can acknowledge that. It rarely changes it.
+        </p>
+        <p>
+          Cash distributed into a system still missing its load-bearing structure tends to leak back out the same gaps that created the harm.
+          <strong>So the lever this vertical works on is the system itself:</strong> land, housing, education, capital access, and mobility — the durable assets that determine whether a community can hold and compound value rather than watch it drain.
+        </p>
+        <p>
+          Reparative capital is most effective when it builds or redirects infrastructure that keeps working long after the headline fades, governed by the people it's meant to serve. That draws a hard line between the symbolic and the material.
+        </p>
+        <p>
+          A statement, a fund announcement, or a logo on a report is signaling. A capitalized institution, a recovered land position, a cooperative that owns its own balance sheet — that is a system change. We design for the second kind, and we measure projects by whether the structure actually shifts.
         </p>
       </div>
-      <div class="links">
-        <a href="https://texasmovement.com/">← texasmovement.com</a>
-        <a href="https://texasmovement.com/privacy">Privacy</a>
-        <a href="https://texasmovement.com/terms">Terms</a>
-        <span class="right">© Texas Movement International · REP // Applied Economics &amp; Reparative Capital</span>
+
+      <div class="band">
+        <div class="track">
+          <div class="node">
+            <div class="dot"></div>
+            <div class="lab">Capital<br>source</div>
+          </div>
+          <div class="node">
+            <div class="dot"></div>
+            <div class="lab">Land &amp;<br>housing</div>
+          </div>
+          <div class="node">
+            <div class="dot"></div>
+            <div class="lab">Institutions<br>&amp; orgs</div>
+          </div>
+          <div class="node">
+            <div class="dot"></div>
+            <div class="lab">Education<br>&amp; mobility</div>
+          </div>
+          <div class="node">
+            <div class="dot"></div>
+            <div class="lab">Durable<br>repair</div>
+          </div>
+        </div>
+        <div class="key">
+          <span><i style="background:var(--tension)"></i>Capital under load</span>
+          <span><i style="background:var(--compression)"></i>Structural infrastructure</span>
+          <span><i style="background:var(--ink-2)"></i>Outcome that holds</span>
+        </div>
       </div>
     </div>
-  </footer>
+  </section>
+
+  <section class="section" id="frameworks">
+    <div class="wrap">
+      <div class="eyebrow">REP // 02 — Frameworks</div>
+      <h2>From community harms to community repair.</h2>
+      <p class="lead-col">
+        Not every project labeled reparative is doing reparative work. We use a simple evaluative discipline — closer to a structural checklist than a mission statement — to separate capital that changes a system from capital that mostly changes a narrative.
+        A project earns the term when it can answer all three of the checkpoints below, in concrete terms.
+      </p>
+
+      <div class="grid3">
+        <article class="col">
+          <div class="n mono">CHECKPOINT 01</div>
+          <h3>Acknowledgement &amp; record</h3>
+          <ul>
+            <li>The specific harm is named, not gestured at.</li>
+            <li>It is documented with data and local knowledge.</li>
+            <li>The affected community is identified precisely.</li>
+            <li>The record is public and can be audited.</li>
+          </ul>
+        </article>
+
+        <article class="col">
+          <div class="n mono">CHECKPOINT 02</div>
+          <h3>Infrastructure &amp; capital</h3>
+          <ul>
+            <li>Tangible assets are built, recovered, or redirected.</li>
+            <li>Institutions and orgs are capitalized, not just consulted.</li>
+            <li>Ownership and governance sit with the community.</li>
+            <li>The capital structure is durable, not one-cycle.</li>
+          </ul>
+        </article>
+
+        <article class="col">
+          <div class="n mono">CHECKPOINT 03</div>
+          <h3>Future-proofing</h3>
+          <ul>
+            <li>The policy or rule that enabled the harm is changed.</li>
+            <li>Tracking and accountability outlive the project team.</li>
+            <li>Gains are protected against extraction or reversal.</li>
+            <li>The same harm cannot be quietly recreated.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="usecases">
+    <div class="wrap">
+      <div class="eyebrow">REP // 03 — Use-cases</div>
+      <h2>How this lab thinks about a project.</h2>
+      <p class="lead-col">
+        Illustrative, not active engagements — sketches of the reasoning we'd bring to a real diagnosis. Each pairs a structural change with the capital it would actually take to make it hold.
+      </p>
+
+      <div class="cases">
+        <article class="case">
+          <div class="lead">
+            <span class="tag">Use-case A · Land &amp; Housing</span>
+            <h3>A historically redlined corridor</h3>
+            <p>
+              A corridor where decades of redlining suppressed ownership and starved property of investment. The repair isn't a payment to residents — it's restoring a community's ability to own, hold, and benefit from the land it lives on.
+            </p>
+          </div>
+          <div class="detail">
+            <div>
+              <div class="k ch">What changes</div>
+              <p>
+                Community-controlled land ownership, anti-displacement structures, and reinvestment that accrues to residents rather than incoming capital.
+              </p>
+            </div>
+            <div>
+              <div class="k cap">What capital is needed</div>
+              <p>
+                Acquisition and a community land trust, patient debt for rehabilitation, and a reserve that absorbs the early years of carry.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="lead">
+            <span class="tag">Use-case B · Institutions</span>
+            <h3>Capitalizing Black-led institutions</h3>
+            <p>
+              Schools, clinics, and cooperatives that already serve a community but operate undercapitalized and debt-burdened. The lever is balance-sheet strength, not another program grant.
+            </p>
+          </div>
+          <div class="detail">
+            <div>
+              <div class="k ch">What changes</div>
+              <p>
+                Debt relief and durable endowment move institutions from year-to-year survival to long-horizon operation and ownership.
+              </p>
+            </div>
+            <div>
+              <div class="k cap">What capital is needed</div>
+              <p>
+                Debt retirement, an endowment or recoverable-grant pool, and governance support so capital stays accountable to the community.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="lead">
+            <span class="tag">Use-case C · Workforce &amp; Mobility</span>
+            <h3>Infrastructure for high-risk labor markets</h3>
+            <p>
+              Communities built around low-wage, high-risk work, where the missing infrastructure is the pathway out — training, transit, and access to better-paying, safer sectors.
+            </p>
+          </div>
+          <div class="detail">
+            <div>
+              <div class="k ch">What changes</div>
+              <p>
+                Durable workforce and mobility infrastructure that raises earning power and reduces exposure to dangerous, dead-end labor.
+              </p>
+            </div>
+            <div>
+              <div class="k cap">What capital is needed</div>
+              <p>
+                Capital for training institutions, transit and digital-access infrastructure, and wage-bridge financing through the transition.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section work" id="work">
+    <div class="wrap">
+      <div class="eyebrow">REP // 04 — Work with us</div>
+      <h2>For institutions building reparative capital.</h2>
+      <div class="lead-col">
+        <p>
+          This vertical is a research and design arm. It does not collect reparations claims, process applications, or disburse payments to individuals. It works with organizations on the structures that move reparative capital.
+        </p>
+        <p>
+          We work with cities, foundations, mission-driven funds, anchor institutions, and policy organizations that are serious about moving beyond statements — and want the capital and infrastructure design to match the intent.
+        </p>
+        <p>
+          The work runs in three phases. First, <strong>diagnosis</strong>: naming the specific harms and structural gaps with data and local knowledge, so the intervention targets the right load. Then <strong>design</strong>: the capital and infrastructure interventions — the assets, institutions, and financing structures that carry the repair. Then <strong>governance</strong>: the tracking and accountability frameworks that keep a project honest and on-thesis for as long as the capital is deployed.
+        </p>
+      </div>
+
+      <div class="two">
+        <div class="half">
+          <h3>Who this is for</h3>
+          <ul>
+            <li>Cities and public agencies designing local programs.</li>
+            <li>Foundations and mission-driven funds.</li>
+            <li>Anchor institutions — universities, hospitals, HBCUs.</li>
+            <li>Black-led orgs, cooperatives, and CDFIs.</li>
+            <li>Policy and research organizations.</li>
+          </ul>
+        </div>
+        <div class="half">
+          <h3>What we do together</h3>
+          <ul>
+            <li>Diagnose harms and structural gaps with the evidence.</li>
+            <li>Design the capital and infrastructure interventions.</li>
+            <li>Structure ownership and community governance.</li>
+            <li>Build tracking so projects stay accountable over time.</li>
+            <li>Pressure-test the thesis before capital is committed.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="disclaim">
+        Texas Movement Reparations &amp; Partners is a research and systems-design arm focused on reparative capital and infrastructure. It is not a claims-processing or benefits-administration body, and it does not intake individual claims or disburse individual payments.
+      </p>
+
+      <a class="btn btn--dark" href="mailto:reparations@texasmovement.com?subject=Reparative%20Capital%20Project%20%E2%80%94%20%5BInstitution%5D&body=Institution%3A%0AContext%2Fcommunity%3A%0AHarms%20and%20gaps%20we're%20looking%20at%3A%0AWhat%20we'd%20want%20to%20explore%3A">
+        Start a reparative capital project <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="tagline">Texas Movement International — Systems for people who move.</div>
+    <p class="note">
+      Texas Movement Reparations &amp; Partners is a research and systems-design arm focused on reparative capital and infrastructure. It operates as part of Texas Movement International’s multi-vertical systems company.
+    </p>
+    <div class="links">
+      <a href="https://texasmovement.com">← texasmovement.com</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <span class="right">© Texas Movement International · REP // Applied Economics &amp; Reparative Capital</span>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
