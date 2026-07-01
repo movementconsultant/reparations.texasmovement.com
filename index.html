@@ -1,868 +1,580 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Texas Movement Reparations &amp; Partners — Reparative Capital &amp; Infrastructure</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Texas Movement Reparations Partners — Reparations, examined as structure.</title>
+    <meta
+      name="description"
+      content="Texas Movement Reparations Partners provides frameworks, data, and systems analysis on reparations and economic repair. Structural work, not legal advice or representation."
+    />
+    <link rel="canonical" href="https://reparations.texasmovement.com" />
 
-  <!-- Primary description -->
-  <meta name="description" content="Texas Movement Reparations &amp; Partners is a research and systems-design arm that treats reparations as infrastructure and reparative capital — not one-off checks. Applied economics, durable capital, and community-governed systems.">
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Texas Movement Reparations Partners — Reparations, examined as structure."
+    />
+    <meta
+      property="og:description"
+      content="A structural and systems lens on reparations and economic repair. Frameworks, data, and analysis with clear boundaries—no legal advice, no representation, no promises."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://reparations.texasmovement.com" />
+    <meta property="og:image" content="/og-texas-movement-reparations.png" />
+    <meta property="og:site_name" content="Texas Movement Reparations Partners" />
 
-  <!-- Theme color -->
-  <meta name="theme-color" content="#15181E">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Texas Movement Reparations Partners — Reparations, examined as structure."
+    />
+    <meta
+      name="twitter:description"
+      content="Structural analysis, frameworks, and systems thinking on reparations and economic repair. Not a legal-services site."
+    />
+    <meta name="twitter:image" content="/og-texas-movement-reparations.png" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Texas Movement Reparations &amp; Partners">
-  <meta property="og:title" content="Texas Movement Reparations &amp; Partners — Reparative Capital &amp; Infrastructure">
-  <meta property="og:description" content="Reparations treated as infrastructure and community capital — not one-off checks. Designing and stress-testing capital frameworks that can hold reparations-scale investment over decades.">
-  <meta property="og:url" content="https://reparations.texasmovement.com">
-  <meta property="og:image" content="https://reparations.texasmovement.com/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:alt" content="Texas Movement Reparations &amp; Partners — reparative capital &amp; infrastructure.">
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Texas Movement Reparations &amp; Partners — Reparative Capital &amp; Infrastructure">
-  <meta name="twitter:description" content="Applied economics and reparative capital for land, housing, institutions, and mobility. A systems-design arm for cities, funds, and Black-led institutions.">
-  <meta name="twitter:image" content="https://reparations.texasmovement.com/og-image.png">
-  <meta name="twitter:image:alt" content="Texas Movement Reparations &amp; Partners — reparative capital &amp; infrastructure.">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --paper:#E7E8E2;
-      --panel:#DDDED7;
-      --ink:#15181E;
-      --ink-2:#1B1F26;
-      --ink-soft:#454A54;
-      --line:#C4C6BD;
-      --line-strong:#A6A99F;
-      --white:#F4F5F0;
-      --bone-soft:#B9BDC4;
-      --compression:#274A78;
-      --compression-lt:#5C86B8;
-      --tension:#BD3B22;
-      --tension-lt:#E0795F;
-      --wrap:1180px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-    body{
-      background:var(--paper);
-      color:var(--ink);
-      font-family:"IBM Plex Sans",system-ui,sans-serif;
-      font-size:17px;
-      line-height:1.62;
-      -webkit-font-smoothing:antialiased;
-      overflow-x:hidden;
-    }
-    a{color:inherit;text-decoration:none}
-    .mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
-    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
-    .section{padding:96px 0;position:relative}
-
-    .eyebrow{
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.72rem;
-      letter-spacing:.2em;
-      text-transform:uppercase;
-      color:var(--ink-soft);
-      display:flex;
-      align-items:center;
-      gap:12px;
-      margin-bottom:22px;
-    }
-    .eyebrow::before{
-      content:"";
-      width:34px;
-      height:1px;
-      background:var(--tension);
-      flex:none;
-    }
-
-    h1,h2,h3{
-      font-family:"Space Grotesk",sans-serif;
-      font-weight:600;
-      line-height:1.06;
-      letter-spacing:-.01em;
-    }
-    h2{font-size:clamp(1.7rem,3.2vw,2.5rem);margin-bottom:18px}
-    p{color:var(--ink-soft)}
-    p strong{color:var(--ink);font-weight:600}
-
-    /* nav */
-    .topbar{
-      border-bottom:1px solid #2a2f38;
-      position:sticky;
-      top:0;
-      background:rgba(21,24,30,.92);
-      backdrop-filter:blur(8px);
-      z-index:50;
-    }
-    .topbar .wrap{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      height:60px;
-      gap:20px;
-    }
-    .brand{
-      display:flex;
-      align-items:baseline;
-      gap:10px;
-      text-decoration:none;
-      color:var(--white);
-    }
-    .brand .mark{
-      font-family:"Space Grotesk",sans-serif;
-      font-weight:700;
-      font-size:.95rem;
-      letter-spacing:.01em;
-    }
-    .brand .sub{
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.66rem;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:var(--tension-lt);
-    }
-    .nav{
-      display:flex;
-      gap:26px;
-    }
-    .nav a{
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.74rem;
-      letter-spacing:.06em;
-      text-decoration:none;
-      color:var(--bone-soft);
-      text-transform:uppercase;
-    }
-    .nav a:hover{color:var(--white)}
-
-    /* hero (dark) */
-    .hero{
-      background:var(--ink);
-      color:var(--paper);
-      padding:90px 0 80px;
-      border-bottom:1px solid #2a2f38;
-      overflow:hidden;
-    }
-    .hero .wrap{
-      display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:54px;
-      align-items:center;
-    }
-    .hero .eyebrow{color:var(--bone-soft)}
-    .hero h1{
-      font-size:clamp(2.5rem,5.4vw,4.2rem);
-      font-weight:700;
-      color:var(--white);
-      margin:8px 0 24px;
-    }
-    .hero h1 em{
-      font-style:normal;
-      color:var(--tension-lt);
-    }
-    .hero .lede{
-      font-size:1.12rem;
-      max-width:32em;
-      margin-bottom:28px;
-      color:var(--bone-soft);
-    }
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-bottom:34px;
-    }
-    .chip{
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.7rem;
-      letter-spacing:.05em;
-      text-transform:uppercase;
-      border:1px solid #343a44;
-      color:var(--bone-soft);
-      padding:8px 14px;
-      border-radius:999px;
-    }
-    .cta-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-    }
-    .btn{
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.82rem;
-      letter-spacing:.04em;
-      text-decoration:none;
-      padding:15px 26px;
-      border:1px solid var(--white);
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      transition:.18s ease;
-      background:var(--white);
-      color:var(--ink);
-    }
-    .btn:hover{background:transparent;color:var(--white)}
-    .btn--ghost{background:transparent;color:var(--white)}
-    .btn--ghost:hover{background:var(--white);color:var(--ink)}
-    .btn--dark{background:var(--ink);color:var(--white);border-color:var(--ink)}
-    .btn--dark:hover{background:transparent;color:var(--ink)}
-    .btn .arrow{transition:transform .18s ease}
-    .btn:hover .arrow{transform:translateX(3px)}
-
-    /* hero figure: reparations infrastructure grid */
-    .figure{width:100%;aspect-ratio:1/.94}
-    .fig{width:100%;height:100%;display:block}
-    @keyframes flow{to{stroke-dashoffset:-18}}
-    .fig .cap{
-      stroke-dasharray:3 6;
-      animation:flow 2.4s linear infinite;
-    }
-    .fig-caption{
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.66rem;
-      letter-spacing:.08em;
-      color:var(--bone-soft);
-      text-transform:uppercase;
-      margin-top:8px;
-      text-align:right;
-    }
-
-    /* framing */
-    .section--panel{
-      background:var(--panel);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-    .lead-col{max-width:46em}
-    .lead-col p{
-      font-size:1.06rem;
-      margin-bottom:18px;
-    }
-
-    /* infrastructure band */
-    .band{
-      margin-top:48px;
-      border:1px solid var(--line-strong);
-      background:var(--paper);
-      padding:34px 26px;
-    }
-    .band .track{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:0;
-      position:relative;
-    }
-    .band .track::before{
-      content:"";
-      position:absolute;
-      left:6%;
-      right:6%;
-      top:18px;
-      height:1px;
-      background:var(--line-strong);
-    }
-    .node{
-      position:relative;
-      z-index:1;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:14px;
-      flex:1;
-      text-align:center;
-    }
-    .node .dot{
-      width:14px;
-      height:14px;
-      border-radius:50%;
-      background:var(--paper);
-      border:2px solid var(--compression);
-    }
-    .node:first-child .dot{
-      background:var(--tension);
-      border-color:var(--tension);
-    }
-    .node:last-child .dot{
-      background:var(--ink);
-      border-color:var(--ink);
-    }
-    .node .lab{
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.66rem;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:var(--ink-soft);
-      line-height:1.4;
-    }
-    .band .key{
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.64rem;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      color:var(--ink-soft);
-      margin-top:26px;
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-    .band .key span{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-    }
-    .band .key i{
-      width:18px;
-      height:2px;
-      display:inline-block;
-    }
-
-    /* frameworks */
-    .grid3{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      margin-top:42px;
-    }
-    .col{
-      border:1px solid var(--line-strong);
-      background:var(--paper);
-      padding:32px 28px;
-    }
-    .col .n{
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.66rem;
-      letter-spacing:.12em;
-      color:var(--tension);
-      margin-bottom:14px;
-    }
-    .col h3{
-      font-size:1.18rem;
-      margin-bottom:14px;
-    }
-    .col ul{list-style:none}
-    .col li{
-      padding:12px 0;
-      border-top:1px solid var(--line);
-      font-size:.94rem;
-      color:var(--ink);
-      display:flex;
-      gap:11px;
-    }
-    .col li::before{
-      content:"—";
-      color:var(--compression);
-      font-family:"IBM Plex Mono",monospace;
-      flex:none;
-    }
-
-    /* use-cases */
-    .cases{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-      margin-top:42px;
-    }
-    .case{
-      border:1px solid var(--line-strong);
-      background:var(--paper);
-      padding:30px 30px;
-      display:grid;
-      grid-template-columns:.85fr 1.15fr;
-      gap:30px;
-    }
-    .case .lead h3{
-      font-size:1.22rem;
-      margin-bottom:10px;
-    }
-    .case .lead .tag{
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.64rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--ink-soft);
-      margin-bottom:12px;
-      display:block;
-    }
-    .case .lead p{
-      font-size:.96rem;
-    }
-    .case .detail{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-      border-left:1px solid var(--line);
-      padding-left:30px;
-    }
-    .case .detail .k{
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.64rem;
-      letter-spacing:.1em;
-      text-transform:uppercase;
-      margin-bottom:10px;
-    }
-    .case .detail .k.ch{color:var(--compression)}
-    .case .detail .k.cap{color:var(--tension)}
-    .case .detail p{
-      font-size:.92rem;
-      color:var(--ink);
-    }
-
-    /* work with us (dark) */
-    .work{
-      background:var(--ink);
-      color:var(--paper);
-    }
-    .work .eyebrow{color:var(--bone-soft)}
-    .work h2{color:var(--white)}
-    .work .lead-col p{color:var(--bone-soft)}
-    .work .two{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:0;
-      border:1px solid #2c313b;
-      margin:44px 0 40px;
-    }
-    .work .two .half{
-      padding:34px 32px;
-    }
-    .work .two .half:first-child{
-      border-right:1px solid #2c313b;
-    }
-    .work .two h3{
-      color:var(--white);
-      font-size:1.1rem;
-      margin-bottom:18px;
-    }
-    .work .two li{
-      list-style:none;
-      padding:12px 0;
-      border-top:1px solid #2c313b;
-      font-size:.95rem;
-      color:var(--bone-soft);
-    }
-    .work .disclaim{
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.72rem;
-      letter-spacing:.04em;
-      color:var(--bone-soft);
-      border-left:2px solid var(--tension);
-      padding-left:16px;
-      margin-bottom:30px;
-      max-width:54em;
-      line-height:1.7;
-    }
-
-    /* footer */
-    .foot{
-      background:var(--ink-2);
-      color:var(--bone-soft);
-      padding:64px 0 40px;
-      border-top:1px solid #2c313b;
-    }
-    .foot .tagline{
-      font-family:"Space Grotesk",sans-serif;
-      font-weight:600;
-      font-size:1.15rem;
-      color:var(--white);
-      margin-bottom:14px;
-    }
-    .foot .note{
-      font-size:.92rem;
-      max-width:54em;
-      margin-bottom:34px;
-    }
-    .foot .links{
-      display:flex;
-      gap:26px;
-      flex-wrap:wrap;
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.72rem;
-      letter-spacing:.05em;
-      text-transform:uppercase;
-      border-top:1px solid #2c313b;
-      padding-top:24px;
-    }
-    .foot .links a{
-      text-decoration:none;
-      color:var(--bone-soft);
-    }
-    .foot .links a:hover{color:var(--white)}
-    .foot .links .right{
-      margin-left:auto;
-      color:#6f757f;
-    }
-
-    @media(max-width:900px){
-      .nav{display:none}
-      .hero .wrap{grid-template-columns:1fr;gap:34px}
-      .figure{max-width:400px;order:-1}
-      .grid3{grid-template-columns:1fr}
-      .case{grid-template-columns:1fr;gap:22px}
-      .case .detail{
-        border-left:none;
-        border-top:1px solid var(--line);
-        padding-left:0;
-        padding-top:22px;
+    <!-- JSON-LD (analysis-only; no legal typing) [file:153] -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://reparations.texasmovement.com#org",
+        "name": "Texas Movement Reparations Partners",
+        "url": "https://reparations.texasmovement.com",
+        "parentOrganization": {
+          "@type": "Organization",
+          "@id": "https://texasmovement.com#org",
+          "name": "Texas Movement International"
+        },
+        "founder": {
+          "@type": "Person",
+          "@id": "https://alexandermathai.com/person",
+          "name": "Alexander Mathai"
+        },
+        "sameAs": [
+          "https://texasmovement.com"
+        ]
       }
-      .work .two{
-        grid-template-columns:1fr;
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://reparations.texasmovement.com#website",
+        "url": "https://reparations.texasmovement.com",
+        "name": "Texas Movement Reparations Partners",
+        "publisher": {
+          "@id": "https://reparations.texasmovement.com#org"
+        }
       }
-      .work .two .half:first-child{
-        border-right:none;
-        border-bottom:1px solid #2c313b;
+    </script>
+    <!-- FAQPage JSON-LD should mirror the boundary-forward FAQ below, with analysis framing, not legal. [file:153] -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #020617;
+        --fg-primary: #e2e8f0;
+        --fg-secondary: #cbd5e1;
+        --fg-muted: #94a3b8;
+        --border-soft: rgba(148, 163, 184, 0.25);
+        --border-card: rgba(148, 163, 184, 0.22);
+        --accent: #38bdf8;
       }
-      .band .track{
-        flex-direction:column;
-        gap:22px;
-        align-items:flex-start;
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg-secondary);
+        font-family: "Inter", system-ui, sans-serif;
+        line-height: 1.6;
       }
-      .band .track::before{display:none}
-      .node{
-        flex-direction:row;
-        text-align:left;
+
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
       }
-      .foot .links .right{
-        margin-left:0;
-        width:100%;
+
+      .topbar,
+      .hero,
+      .section,
+      .footer {
+        margin-bottom: 2rem;
       }
-      .section{padding:70px 0}
-    }
-    @media(prefers-reduced-motion:reduce){
-      .fig .cap{animation:none}
-      html{scroll-behavior:auto}
-    }
-    :focus-visible{
-      outline:2px solid var(--compression-lt);
-      outline-offset:3px;
-    }
-  </style>
-</head>
-<body>
 
-<header class="topbar">
-  <div class="wrap">
-    <a href="https://texasmovement.com" class="brand">
-      <span class="mark">Texas Movement</span>
-      <span class="sub">Reparations &amp; Partners</span>
-    </a>
-    <nav class="nav">
-      <a href="#thesis">Thesis</a>
-      <a href="#frameworks">Frameworks</a>
-      <a href="#usecases">Use-cases</a>
-      <a href="#work">Work with us</a>
-    </nav>
-  </div>
-</header>
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: center;
+        border-bottom: 1px solid var(--border-soft);
+        padding-bottom: 1rem;
+      }
 
-<main>
-  <section class="hero" id="top">
-    <div class="wrap">
-      <div>
-        <div class="eyebrow">REP // Applied Economics &amp; Reparative Capital</div>
-        <h1>Reparations is a <em>design problem</em>, not a payout.</h1>
-        <p class="lede">
-          A research and systems-design arm that treats reparations as infrastructure and community capital — not one-off checks. We design and stress-test the capital frameworks that can carry reparations-scale investment into land, institutions, and people, and hold up under decades of accountability.
-        </p>
-        <div class="chips">
-          <span class="chip">Repair over optics</span>
-          <span class="chip">Infrastructure over slogans</span>
-          <span class="chip">Systems over stunts</span>
-        </div>
-        <div class="cta-row">
-          <a class="btn" href="#thesis">
-            Read the thesis <span class="arrow">→</span>
-          </a>
-          <a class="btn btn--ghost" href="#work">
-            For institutions &amp; funds <span class="arrow">↓</span>
-          </a>
-        </div>
-      </div>
+      .brand {
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+      }
 
-      <aside class="figure">
-        <!-- Simple infrastructure grid / capital routing diagram -->
-        <svg class="fig" viewBox="0 0 320 300" role="img" aria-labelledby="rep-fig">
-          <title id="rep-fig">Capital routed into durable infrastructure</title>
-          <rect x="24" y="36" width="272" height="208" rx="18" fill="#1B1F26" stroke="#4b515e" stroke-width="1.4"/>
-          <line class="cap" x1="70" y1="90" x2="250" y2="90" stroke="#5C86B8" stroke-width="2"/>
-          <line class="cap" x1="70" y1="130" x2="250" y2="130" stroke="#E0795F" stroke-width="2"/>
-          <line class="cap" x1="70" y1="170" x2="250" y2="170" stroke="#C4C6BD" stroke-width="2"/>
+      .brand-mark {
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+      }
 
-          <circle cx="70" cy="90" r="8" fill="#BD3B22"/>
-          <circle cx="70" cy="130" r="8" fill="#274A78"/>
-          <circle cx="70" cy="170" r="8" fill="#A6A99F"/>
+      .brand-name {
+        font-weight: 700;
+        color: var(--fg-primary);
+      }
 
-          <circle cx="250" cy="90" r="8" fill="#15181E" stroke="#BD3B22" stroke-width="2"/>
-          <circle cx="250" cy="130" r="8" fill="#15181E" stroke="#274A78" stroke-width="2"/>
-          <circle cx="250" cy="170" r="8" fill="#15181E" stroke="#A6A99F" stroke-width="2"/>
+      .brand-subtitle {
+        font-size: 0.9rem;
+        color: var(--fg-muted);
+      }
 
-          <text x="70" y="70" font-family="IBM Plex Mono, monospace" font-size="9" fill="#B9BDC4">Capital source</text>
-          <text x="250" y="70" font-family="IBM Plex Mono, monospace" font-size="9" fill="#B9BDC4" text-anchor="end">Durable infrastructure</text>
-        </svg>
-        <div class="fig-caption">FIG. 06 — CAPITAL ROUTED INTO DURABLE INFRASTRUCTURE</div>
-      </aside>
-    </div>
-  </section>
+      .nav {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
 
-  <section class="section section--panel" id="thesis">
-    <div class="wrap">
-      <div class="eyebrow">REP // 01 — The Thesis</div>
-      <h2>Reparations as infrastructure, not just checks.</h2>
+      .nav a {
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
 
-      <div class="lead-col">
-        <p>
-          The gap reparations is meant to close is structural. It shows up as missing wealth, blocked mobility, thin institutions, and absent infrastructure — the compounded result of policy that was designed, written down, and enforced over generations. A one-time transfer can acknowledge that. It rarely changes it.
-        </p>
-        <p>
-          Cash distributed into a system still missing its load-bearing structure tends to leak back out the same gaps that created the harm.
-          <strong>So the lever this vertical works on is the system itself:</strong> land, housing, education, capital access, and mobility — the durable assets that determine whether a community can hold and compound value rather than watch it drain.
-        </p>
-        <p>
-          Reparative capital is most effective when it builds or redirects infrastructure that keeps working long after the headline fades, governed by the people it's meant to serve. That draws a hard line between the symbolic and the material.
-        </p>
-        <p>
-          A statement, a fund announcement, or a logo on a report is signaling. A capitalized institution, a recovered land position, a cooperative that owns its own balance sheet — that is a system change. We design for the second kind, and we measure projects by whether the structure actually shifts.
-        </p>
-      </div>
+      .nav a:hover {
+        text-decoration: underline;
+      }
 
-      <div class="band">
-        <div class="track">
-          <div class="node">
-            <div class="dot"></div>
-            <div class="lab">Capital<br>source</div>
-          </div>
-          <div class="node">
-            <div class="dot"></div>
-            <div class="lab">Land &amp;<br>housing</div>
-          </div>
-          <div class="node">
-            <div class="dot"></div>
-            <div class="lab">Institutions<br>&amp; orgs</div>
-          </div>
-          <div class="node">
-            <div class="dot"></div>
-            <div class="lab">Education<br>&amp; mobility</div>
-          </div>
-          <div class="node">
-            <div class="dot"></div>
-            <div class="lab">Durable<br>repair</div>
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.9fr);
+        gap: 1.5rem;
+        align-items: start;
+        padding-top: 0.5rem;
+      }
+
+      .eyebrow {
+        color: #60a5fa;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+      }
+
+      h1 {
+        font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+        line-height: 1.05;
+        color: var(--fg-primary);
+        margin: 0 0 0.5rem;
+      }
+
+      .hero-sub {
+        font-size: clamp(1.7rem, 3.1vw, 2.8rem);
+        line-height: 1.1;
+        color: var(--fg-secondary);
+        margin: 0 0 1rem;
+      }
+
+      .hero-body {
+        font-size: 0.98rem;
+        color: var(--fg-secondary);
+        max-width: 60ch;
+      }
+
+      h2 {
+        font-size: 0.95rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--fg-muted);
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        margin: 0 0 0.4rem;
+        color: var(--fg-primary);
+        font-size: 0.92rem;
+      }
+
+      .hero-card,
+      .card,
+      .faq-item,
+      .contact {
+        border: 1px solid var(--border-card);
+        border-radius: 1rem;
+        background: rgba(15, 23, 42, 0.55);
+      }
+
+      .hero-card {
+        overflow: hidden;
+      }
+
+      .hero-card-body {
+        padding: 1rem;
+      }
+
+      .hero-card-title {
+        margin: 0 0 0.35rem;
+        color: var(--fg-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.78rem;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: 1.25rem;
+      }
+
+      .button {
+        padding: 0.75rem 1rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .button.primary {
+        background: var(--accent);
+        color: var(--bg);
+      }
+
+      .button.secondary {
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        color: #e5e7eb;
+      }
+
+      .section {
+        padding-top: 0.5rem;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .card,
+      .faq-item {
+        padding: 1rem;
+      }
+
+      .bullets {
+        display: grid;
+        gap: 0.75rem;
+        max-width: 70ch;
+      }
+
+      .faq {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .contact {
+        padding: 1rem;
+      }
+
+      .contact .fineprint {
+        font-size: 0.85rem;
+        color: var(--fg-muted);
+      }
+
+      .footer {
+        border-top: 1px solid var(--border-soft);
+        padding-top: 1rem;
+        color: var(--fg-muted);
+        font-size: 0.9rem;
+      }
+
+      .footer-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.85rem;
+      }
+
+      .footer-links a {
+        color: var(--fg-secondary);
+        text-decoration: none;
+      }
+
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-separator {
+        color: #64748b;
+      }
+
+      @media (max-width: 800px) {
+        .hero,
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .footer-row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">RP</div>
+          <div class="brand-copy">
+            <div class="brand-name">Texas Movement Reparations Partners</div>
+            <div class="brand-subtitle">Structural layer · Reparations</div>
           </div>
         </div>
-        <div class="key">
-          <span><i style="background:var(--tension)"></i>Capital under load</span>
-          <span><i style="background:var(--compression)"></i>Structural infrastructure</span>
-          <span><i style="background:var(--ink-2)"></i>Outcome that holds</span>
+        <nav class="nav">
+          <a href="#overview">Overview</a>
+          <a href="#who">Who it’s for</a>
+          <a href="#how">How work is scoped</a>
+          <a href="#areas">Areas of work</a>
+          <a href="#boundaries">Boundaries & intent</a>
+          <a href="#ecosystem">Ecosystem</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section id="overview" class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">STRUCTURE · DATA · FRAMEWORKS</p>
+          <h1>Reparations, examined as structure.</h1>
+          <p class="hero-sub">
+            Frameworks, data, and systems analysis on economic repair—long-horizon work, handled soberly, with clear
+            boundaries.
+          </p>
+          <p class="hero-body">
+            Texas Movement Reparations Partners is the structural layer of the ecosystem. It provides education,
+            frameworks, data, and systems analysis on reparations and economic repair. It does not provide legal advice
+            or representation. It is for advocates, policy thinkers, institutions, and communities that need rigorous
+            structural thinking about long-horizon questions. It works through analysis, modeling, and framework design,
+            never rulings or guarantees. It connects to Consulting, applying the same systems discipline to a subject
+            that demands care. The subject is serious. The work is framed accordingly—precise, historically literate, and
+            clear about what it is and is not.
+          </p>
+          <div class="cta-row">
+            <a class="button primary" href="#boundaries">Read boundaries</a>
+            <a class="button secondary" href="#areas">See areas of work</a>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" id="frameworks">
-    <div class="wrap">
-      <div class="eyebrow">REP // 02 — Frameworks</div>
-      <h2>From community harms to community repair.</h2>
-      <p class="lead-col">
-        Not every project labeled reparative is doing reparative work. We use a simple evaluative discipline — closer to a structural checklist than a mission statement — to separate capital that changes a system from capital that mostly changes a narrative.
-        A project earns the term when it can answer all three of the checkpoints below, in concrete terms.
-      </p>
-
-      <div class="grid3">
-        <article class="col">
-          <div class="n mono">CHECKPOINT 01</div>
-          <h3>Acknowledgement &amp; record</h3>
-          <ul>
-            <li>The specific harm is named, not gestured at.</li>
-            <li>It is documented with data and local knowledge.</li>
-            <li>The affected community is identified precisely.</li>
-            <li>The record is public and can be audited.</li>
-          </ul>
-        </article>
-
-        <article class="col">
-          <div class="n mono">CHECKPOINT 02</div>
-          <h3>Infrastructure &amp; capital</h3>
-          <ul>
-            <li>Tangible assets are built, recovered, or redirected.</li>
-            <li>Institutions and orgs are capitalized, not just consulted.</li>
-            <li>Ownership and governance sit with the community.</li>
-            <li>The capital structure is durable, not one-cycle.</li>
-          </ul>
-        </article>
-
-        <article class="col">
-          <div class="n mono">CHECKPOINT 03</div>
-          <h3>Future-proofing</h3>
-          <ul>
-            <li>The policy or rule that enabled the harm is changed.</li>
-            <li>Tracking and accountability outlive the project team.</li>
-            <li>Gains are protected against extraction or reversal.</li>
-            <li>The same harm cannot be quietly recreated.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="usecases">
-    <div class="wrap">
-      <div class="eyebrow">REP // 03 — Use-cases</div>
-      <h2>How this lab thinks about a project.</h2>
-      <p class="lead-col">
-        Illustrative, not active engagements — sketches of the reasoning we'd bring to a real diagnosis. Each pairs a structural change with the capital it would actually take to make it hold.
-      </p>
-
-      <div class="cases">
-        <article class="case">
-          <div class="lead">
-            <span class="tag">Use-case A · Land &amp; Housing</span>
-            <h3>A historically redlined corridor</h3>
+        <aside class="hero-card">
+          <div class="hero-card-body">
+            <p class="hero-card-title">Standing boundary</p>
             <p>
-              A corridor where decades of redlining suppressed ownership and starved property of investment. The repair isn't a payment to residents — it's restoring a community's ability to own, hold, and benefit from the land it lives on.
+              Texas Movement Reparations Partners provides structural analysis, frameworks, and systems thinking. It
+              does not provide legal advice or representation, and nothing here should be relied on as legal counsel.
+              For legal matters, consult a qualified attorney.
             </p>
           </div>
-          <div class="detail">
-            <div>
-              <div class="k ch">What changes</div>
-              <p>
-                Community-controlled land ownership, anti-displacement structures, and reinvestment that accrues to residents rather than incoming capital.
-              </p>
-            </div>
-            <div>
-              <div class="k cap">What capital is needed</div>
-              <p>
-                Acquisition and a community land trust, patient debt for rehabilitation, and a reserve that absorbs the early years of carry.
-              </p>
-            </div>
-          </div>
-        </article>
+        </aside>
+      </section>
 
-        <article class="case">
-          <div class="lead">
-            <span class="tag">Use-case B · Institutions</span>
-            <h3>Capitalizing Black-led institutions</h3>
+      <section id="who" class="section">
+        <h2>Who it’s for</h2>
+        <div class="bullets">
+          <p>
+            Advocates and organizers who want structural analysis they can reason with, not slogans or oversimplified
+            narratives.
+          </p>
+          <p>
+            Policy thinkers and institutions weighing long-horizon economic questions and their structural implications.
+          </p>
+          <p>
+            Communities that want frameworks and data handled with historical literacy and without overpromising. It is
+            not for anyone seeking legal representation, guaranteed outcomes, or a quick fix.
+          </p>
+        </div>
+      </section>
+
+      <section id="how" class="section">
+        <h2>How work is scoped</h2>
+        <div class="bullets">
+          <p><strong>Analysis and models.</strong> Work centers on examining systems and conditions that shape economic outcomes, rigorously and in context.</p>
+          <p><strong>Frameworks, not verdicts.</strong> The output is frameworks and models institutions and communities can reason with—not prescriptions, rulings, or promises.</p>
+          <p><strong>No legal representation.</strong> There is no legal advice, no representation, and no litigation work. Legal matters belong with counsel.</p>
+          <p><strong>Long-horizon by design.</strong> Questions are treated as long-horizon structural work, not short-term fixes.</p>
+        </div>
+      </section>
+
+      <section id="areas" class="section">
+        <h2>Areas of work</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Structural analysis</h3>
             <p>
-              Schools, clinics, and cooperatives that already serve a community but operate undercapitalized and debt-burdened. The lever is balance-sheet strength, not another program grant.
+              Examination of the systems and conditions that shape economic outcomes, with attention to history,
+              policy, and lived context. The aim is clarity, not verdicts.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Data & economic modeling</h3>
+            <p>
+              Models that make structural questions legible—flows, gaps, and long-horizon effects—so institutions and
+              communities can see the mechanics behind headlines.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Framework design</h3>
+            <p>
+              Development of frameworks groups can use to think and decide. These are tools for reasoning, not
+              prescriptions or guarantees.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Education & briefings</h3>
+            <p>
+              Historically grounded material and briefings that inform without oversimplifying or overstating what
+              analysis can do on its own.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="boundaries" class="section">
+        <h2>Boundaries & intent</h2>
+        <div class="card" style="padding: 1rem;">
+          <p>
+            Texas Movement Reparations Partners provides structural analysis, frameworks, and systems thinking. It does
+            not provide legal advice or representation, and nothing on this site should be relied on as legal counsel.
+          </p>
+          <p>
+            Work here is analytical and educational. Outcomes depend on law, policy, institutions, and history that sit
+            beyond this property. For legal matters, consult a qualified attorney in your jurisdiction.
+          </p>
+        </div>
+      </section>
+
+      <section id="ecosystem" class="section">
+        <h2>Ecosystem connections</h2>
+        <div class="bullets">
+          <p>
+            Reparations Partners applies Texas Movement’s systems perspective to structural questions, alongside
+            <a href="https://consulting.texasmovement.com" target="_blank" rel="noreferrer">Texas Movement Consulting</a>.
+          </p>
+          <p>
+            It is documented, where appropriate, by
+            <a href="https://media.texasmovement.com" target="_blank" rel="noreferrer">Texas Movement Media</a> so the
+            work has a durable record.
+          </p>
+          <p>
+            It sits under
+            <a href="https://texasmovement.com" target="_blank" rel="noreferrer">Texas Movement International</a> as the
+            structural layer, connected to but distinct from operational and product lanes.
+          </p>
+        </div>
+      </section>
+
+      <section id="faq" class="section">
+        <h2>Frequently asked questions</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <h3>What is this property?</h3>
+            <p>
+              A structural and systems lens on reparations and economic repair—education, frameworks, data, and
+              analysis. It is not a legal-services site.
             </p>
           </div>
-          <div class="detail">
-            <div>
-              <div class="k ch">What changes</div>
-              <p>
-                Debt relief and durable endowment move institutions from year-to-year survival to long-horizon operation and ownership.
-              </p>
-            </div>
-            <div>
-              <div class="k cap">What capital is needed</div>
-              <p>
-                Debt retirement, an endowment or recoverable-grant pool, and governance support so capital stays accountable to the community.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="case">
-          <div class="lead">
-            <span class="tag">Use-case C · Workforce &amp; Mobility</span>
-            <h3>Infrastructure for high-risk labor markets</h3>
+          <div class="faq-item">
+            <h3>Do you provide legal advice or representation?</h3>
             <p>
-              Communities built around low-wage, high-risk work, where the missing infrastructure is the pathway out — training, transit, and access to better-paying, safer sectors.
+              No. This is analysis and frameworks only. For legal matters, you should consult a qualified attorney.
             </p>
           </div>
-          <div class="detail">
-            <div>
-              <div class="k ch">What changes</div>
-              <p>
-                Durable workforce and mobility infrastructure that raises earning power and reduces exposure to dangerous, dead-end labor.
-              </p>
-            </div>
-            <div>
-              <div class="k cap">What capital is needed</div>
-              <p>
-                Capital for training institutions, transit and digital-access infrastructure, and wage-bridge financing through the transition.
-              </p>
-            </div>
+          <div class="faq-item">
+            <h3>Who is it for?</h3>
+            <p>
+              Advocates, policy thinkers, institutions, and communities that want rigorous structural thinking, not a
+              service promise or guaranteed outcome.
+            </p>
           </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section work" id="work">
-    <div class="wrap">
-      <div class="eyebrow">REP // 04 — Work with us</div>
-      <h2>For institutions building reparative capital.</h2>
-      <div class="lead-col">
-        <p>
-          This vertical is a research and design arm. It does not collect reparations claims, process applications, or disburse payments to individuals. It works with organizations on the structures that move reparative capital.
-        </p>
-        <p>
-          We work with cities, foundations, mission-driven funds, anchor institutions, and policy organizations that are serious about moving beyond statements — and want the capital and infrastructure design to match the intent.
-        </p>
-        <p>
-          The work runs in three phases. First, <strong>diagnosis</strong>: naming the specific harms and structural gaps with data and local knowledge, so the intervention targets the right load. Then <strong>design</strong>: the capital and infrastructure interventions — the assets, institutions, and financing structures that carry the repair. Then <strong>governance</strong>: the tracking and accountability frameworks that keep a project honest and on-thesis for as long as the capital is deployed.
-        </p>
-      </div>
-
-      <div class="two">
-        <div class="half">
-          <h3>Who this is for</h3>
-          <ul>
-            <li>Cities and public agencies designing local programs.</li>
-            <li>Foundations and mission-driven funds.</li>
-            <li>Anchor institutions — universities, hospitals, HBCUs.</li>
-            <li>Black-led orgs, cooperatives, and CDFIs.</li>
-            <li>Policy and research organizations.</li>
-          </ul>
+          <div class="faq-item">
+            <h3>What does “scoped work” mean here?</h3>
+            <p>
+              Consulting-style analysis, modeling, and framework design. It is never legal work and never framed as a
+              guarantee.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>How is this handled responsibly?</h3>
+            <p>
+              Soberly and precisely, with historical literacy and explicit boundaries. The subject is treated with the
+              seriousness it deserves.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>How does it connect to Texas Movement?</h3>
+            <p>
+              It applies the ecosystem’s systems perspective to a structural subject, alongside Consulting and the
+              broader company layer.
+            </p>
+          </div>
         </div>
-        <div class="half">
-          <h3>What we do together</h3>
-          <ul>
-            <li>Diagnose harms and structural gaps with the evidence.</li>
-            <li>Design the capital and infrastructure interventions.</li>
-            <li>Structure ownership and community governance.</li>
-            <li>Build tracking so projects stay accountable over time.</li>
-            <li>Pressure-test the thesis before capital is committed.</li>
-          </ul>
+      </section>
+
+      <section id="contact" class="section contact">
+        <h2>Contact</h2>
+        <p>
+          For scoped analytical work—structural analysis, data modeling, or framework design—send a brief outlining
+          context, constraints, and what you need to understand more clearly.
+        </p>
+        <a href="mailto:movementconsultant@gmail.com" class="email">movementconsultant@gmail.com</a>
+        <p class="fineprint">
+          Texas Movement Reparations Partners does not provide legal advice or representation. No attorney–client relationship is formed through this site.
+        </p>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-row">
+          <p>© 2026 Texas Movement International · Systems for people who move.</p>
+          <div class="footer-links">
+            <a href="#overview">Back to top ↑</a>
+            <span class="footer-separator">·</span>
+            <a href="https://alexandermathai.com" target="_blank" rel="noreferrer">Founder</a>
+            <span class="footer-separator">·</span>
+            <a href="https://texasmovement.com" target="_blank" rel="noreferrer">TMI</a>
+            <span class="footer-separator">·</span>
+            <a href="https://consulting.texasmovement.com" target="_blank" rel="noreferrer">Consulting</a>
+          </div>
         </div>
-      </div>
-
-      <p class="disclaim">
-        Texas Movement Reparations &amp; Partners is a research and systems-design arm focused on reparative capital and infrastructure. It is not a claims-processing or benefits-administration body, and it does not intake individual claims or disburse individual payments.
-      </p>
-
-      <a class="btn btn--dark" href="mailto:reparations@texasmovement.com?subject=Reparative%20Capital%20Project%20%E2%80%94%20%5BInstitution%5D&body=Institution%3A%0AContext%2Fcommunity%3A%0AHarms%20and%20gaps%20we're%20looking%20at%3A%0AWhat%20we'd%20want%20to%20explore%3A">
-        Start a reparative capital project <span class="arrow">→</span>
-      </a>
-    </div>
-  </section>
-</main>
-
-<footer class="foot">
-  <div class="wrap">
-    <div class="tagline">Texas Movement International — Systems for people who move.</div>
-    <p class="note">
-      Texas Movement Reparations &amp; Partners is a research and systems-design arm focused on reparative capital and infrastructure. It operates as part of Texas Movement International’s multi-vertical systems company.
-    </p>
-    <div class="links">
-      <a href="https://texasmovement.com">← texasmovement.com</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
-      <span class="right">© Texas Movement International · REP // Applied Economics &amp; Reparative Capital</span>
-    </div>
-  </div>
-</footer>
-
-</body>
+      </footer>
+    </main>
+  </body>
 </html>
